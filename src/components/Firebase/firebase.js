@@ -9,7 +9,9 @@ const config = {
 
 class Firebase {
   constructor(app) {
-    app.initializeApp(config);
+    if (!app.apps.length) {
+      app.initializeApp(config);
+    }
 
     /* Helper */
 
